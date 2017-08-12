@@ -17,12 +17,10 @@
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
-                height: 100vh;
                 margin: 0;
             }
 
             .full-height {
-                height: 100vh;
             }
 
             .flex-center {
@@ -63,6 +61,7 @@
                 margin-bottom: 30px;
             }
         </style>
+        @yield('custom')
     </head>
     <body>
         <div class="flex-center position-ref full-height">

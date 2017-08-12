@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/articles', 'ArticleController@index');
+Route::get('/articles', 'ArticleController@index')->name('article.index');
+Route::get('/read/{id}', 'ArticleController@show')->name('article.show');

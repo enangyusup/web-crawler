@@ -16,16 +16,16 @@ Route::get('/', function () {
 });
 
 Route::get('tag', function () {
-    return view('tag');
+    return view('tag.index');
 })->name('tag');
 
 Route::get('tag/{slug}', function ($slug) {
-    return view('tag_show');
+    return view('tag.show', compact('slug'));
 })->where(['slug' => '[a-z]+'])->name('tag.slug');
 
 Route::get('tag/{slug}/{section}', function ($slug, $section) {
-    return view('tag_section');
-})->where(['slug' => '[a-z]+', 'section' => '[a-z]+[0-9]'])->name('tag.section');
+    return view('tag.section', compact('slug', 'section'));
+})->where(['slug' => '[a-z]+', 'section' => '[a-z0-9]+'])->name('tag.section');
 
 Route::get('/articles', 'ArticleController@index')->name('article.index');
 Route::get('/read/{id}', 'ArticleController@show')->name('article.show');
